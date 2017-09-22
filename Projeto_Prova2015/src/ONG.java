@@ -3,7 +3,6 @@ public class ONG {
 	private String nome;
 	private String responsavel;
 	private String estado;
-	// private ArrayList<Posto> posto;
 
 	// ToString
 	@Override

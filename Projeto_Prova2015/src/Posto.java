@@ -6,22 +6,23 @@ public class Posto {
 	private boolean vegetariano;
 	private boolean semGluten;
 	private boolean semLactose;
+	private ONG ong;
 
-	// ToString
 	@Override
 	public String toString() {
-		return "Posto [codigo=" + codigo + " capacidade=" + capacidade + ", vegetariano=" + vegetariano + ", semGluten="
-				+ semGluten + ", semLactose=" + semLactose + "]\n";
+		return "Posto [codigo=" + codigo + ", capacidade=" + capacidade + ", vegetariano=" + vegetariano
+				+ ", semGluten=" + semGluten + ", semLactose=" + semLactose + ", ong=" + ong + "]";
 	}
 
 	// Metodo CONSTRUTOR
-	public Posto(int codigo, double capacidade, boolean vegetariano, boolean semGluten, boolean semLactose) {
+	public Posto(int codigo, double capacidade, boolean vegetariano, boolean semGluten, boolean semLactose, ONG ong) {
 		super();
 		this.codigo = codigo;
 		this.capacidade = capacidade;
 		this.vegetariano = vegetariano;
 		this.semGluten = semGluten;
 		this.semLactose = semLactose;
+		this.ong = ong;
 	}
 
 	// Metodos GET e SET
@@ -63,6 +64,14 @@ public class Posto {
 
 	public void setSemLactose(boolean semLactose) {
 		this.semLactose = semLactose;
+	}
+
+	public ONG getOng() {
+		return ong;
+	}
+
+	public void setOng(ONG ong) {
+		this.ong = ong;
 	}
 
 }

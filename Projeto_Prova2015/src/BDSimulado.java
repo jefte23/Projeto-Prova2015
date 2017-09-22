@@ -31,16 +31,16 @@ public class BDSimulado {
 		this.postos = new ArrayList<Posto>();
 
 		// Preencher a lista de postos
-		Posto p1 = new Posto(112, 2312312, true, false, true);
-		Posto p2 = new Posto(111, 50000, false, false, false);
-		Posto p3 = new Posto(112, 3221, true, true, false);
-		Posto p4 = new Posto(113, 83921, true, true, false);
-		Posto p5 = new Posto(114, 33221, false, true, false);
-		Posto p6 = new Posto(111, 22122, true, true, true);
-		Posto p7 = new Posto(111, 553312, false, false, false);
-		Posto p8 = new Posto(111, 221231, false, false, false);
-		Posto p9 = new Posto(111, 882912, true, false, false);
-		Posto p10 = new Posto(111, 21231, true, true, false);
+		Posto p1 = new Posto(112, 2312312, true, false, true, ongs6);
+		Posto p2 = new Posto(111, 50000, false, false, false, ongs5);
+		Posto p3 = new Posto(112, 3221, true, true, false, ongs4);
+		Posto p4 = new Posto(113, 83921, true, true, false, ongs3);
+		Posto p5 = new Posto(114, 33221, false, true, false, ongs2);
+		Posto p6 = new Posto(111, 22122, true, true, true, ongs1);
+		Posto p7 = new Posto(111, 553312, false, false, false, ongs2);
+		Posto p8 = new Posto(111, 221231, false, false, false, ongs3);
+		Posto p9 = new Posto(111, 882912, true, false, false, ongs4);
+		Posto p10 = new Posto(111, 21231, true, true, false, ongs5);
 
 		// colocaando postos na lista
 		this.postos.add(p1);
@@ -134,5 +134,28 @@ public class BDSimulado {
 		}
 		return resultado;
 	}
+
+	// ----------------------------------------------------
+
+	// Receba número de pessoas retorne o nome de uma das ONG's que atende
+	public String getONGQueAtende(int qtdPessoas) {
+
+		String resultado = "";
+		double qtdComida = qtdPessoas * 0.5;
+
+		// Percorre a lista de postos
+		for (int i = 0; i < this.postos.size(); i++) {
+			if (this.postos.get(i).getCapacidade() >= qtdComida) {
+				this.postos.get(i).getOng().getNome();
+			}
+		}
+		return resultado;
+	}
+	// ----------------------------------------------------
+
+	// Homem: 500g | Mulher: 300g|Criança: 150g
+	// retorne o nome de todas as ONG's que podem atender a caravana.
+
+	// ----------------------------------------------------
 
 }
